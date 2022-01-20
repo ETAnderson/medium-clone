@@ -19,7 +19,7 @@ export default async function createComment(
 
     try {
         await client.create({
-            _type: 'comment',
+            _type: 'Comment',
             post: {
                 type: 'reference',
                 _ref: _id,
