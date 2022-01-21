@@ -159,6 +159,19 @@ function Post({ post }: Props) {
         </form>
         )}
         
+        {/* Comments */}
+
+        <div className='flex flex-col p-10 my-10 max-w-3xl shadow-yellow shadow space-y-2'>
+            <h3 className='text-4xl'>Comments</h3>
+            <hr className='pb-2'/>
+
+            {post.comments.map((comment) => (
+                <div key={comment._id}>
+                   <p><span className='text-yellow-500 '>{comment.name}:</span> {comment.comment}</p>
+                </div>
+            ))}
+        </div>
+
     </main>
 );
 }
@@ -205,7 +218,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
        mainImage,
        slug,
        body
-      }`
+      }`;
 
       const post = await sanityClient.fetch(query, {
           slug: params?.slug,
