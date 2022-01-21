@@ -6,7 +6,7 @@ import PortableText from 'react-portable-text';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { useState } from 'react';
 
-// 2:41:14
+
 
 interface IFormInput {
     _id: string;
@@ -196,9 +196,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         name,
         image,
       },
-       'comments': *[_type == "comment" &&
-                     post._ref == ^._id &&
-                     approved == true],
+       'comments': *[
+            _type == "comment" &&
+            post._ref == ^._id &&
+            approved == true
+        ],
        description,
        mainImage,
        slug,
